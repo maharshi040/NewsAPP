@@ -1,0 +1,31 @@
+
+<h1 class="my-4 head-style">Welcome to News APP</h1>
+<div *ngIf="clicked">
+         <app-passage  [receivedMessage]="messageToSend" (messageToEmit)="getMessage($event)"></app-passage>
+         <p>{{MessageFromPassage}}</p>
+        </div>
+          
+
+  <div class="row">
+     
+      <div class="col-lg-4 col-md-4 col-sm-12 " *ngFor="let article of articles">
+       <div class="card card-style my-2 mx-1">
+        
+         <img class="card-img-top img-style" src="{{article.urlToImage}}" alt="Image">
+         
+        <h2 class="title-style">{{article.title}}</h2>
+        <p class="author-style"> 
+        {{article.author}}
+        </p>
+        <p class="desc-style"> 
+        {{article.description}}
+        </p>
+        <button class="btn btn-primary btn-style" (click)="buttonClick(article.title)">Show More</button>
+        
+       </div>
+       </div>
+       </div>
+     
+
+
+
